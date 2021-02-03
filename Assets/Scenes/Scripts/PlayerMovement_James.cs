@@ -27,6 +27,8 @@ public class PlayerMovement_James : MonoBehaviour
             PlayerInput();
         else
             ResetVelocity();
+
+        SetAnimations();
     }
 
     //Player input goes here
@@ -82,5 +84,14 @@ public class PlayerMovement_James : MonoBehaviour
     void ResetVelocity()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
+    }
+
+    void SetAnimations()
+    {
+        float animMove;
+
+        // Determines if the character is moving for anim transition.
+        animMove = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Move", Mathf.Abs(animMove * BASE_SPEED));
     }
 }

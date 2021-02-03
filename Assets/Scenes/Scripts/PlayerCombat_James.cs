@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerCombat_James : MonoBehaviour
 {
+    //Controls
+
+    [SerializeField] KeyCode lightAttack;
+    [SerializeField] KeyCode heavyAttack;
+
+
     [SerializeField] Animator anim;
     [SerializeField] Transform heavyHitbox;
     [SerializeField] float heavyHitBoxRadius;
@@ -46,12 +52,12 @@ public class PlayerCombat_James : MonoBehaviour
     void PlayerInput()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(lightAttack))
         {
             LightAttack();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(heavyAttack))
         {
             HeavyAttack();
         }

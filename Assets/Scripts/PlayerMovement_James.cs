@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement_James : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    
+    // For setting animation values
+    [SerializeField] Animator animator;
 
     [SerializeField] float BASE_SPEED;
 
@@ -48,16 +51,19 @@ public class PlayerMovement : MonoBehaviour
             ResetVelocity();
         }
 
+        SetAnimations();
+
         //Turn the player in the direction they are moving.
         void FlipPlayer()
         {
-          transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
         //Ran when player inputs to move left
         void MoveLeft()
         {
             rb.velocity = new Vector2(-BASE_SPEED, rb.velocity.y);
+
         }
 
 
@@ -65,12 +71,22 @@ public class PlayerMovement : MonoBehaviour
         void MoveRight()
         {
             rb.velocity = new Vector2(BASE_SPEED, rb.velocity.y);
+
         }
 
         //Ran when the player isnt inputting any horizontal movement.
         void ResetVelocity()
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        void SetAnimations()
+        {
+            float animMove;
+
+            // Determines if the character is moving for anim transition.
+            animMove = Input.GetAxisRaw("Horizontal");
+            animator.SetFloat("Move", Mathf.Abs(animMove * BASE_SPEED));
         }
     }
 }

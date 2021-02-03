@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement_James : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    
+    // For setting animation values
+    [SerializeField] Animator animator;
 
     public PlayerCombat_James combatScript;
 

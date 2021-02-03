@@ -360,7 +360,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef3e0a5e364756147bf985d8a957500b, type: 3}
+  m_Sprite: {fileID: -8656475942692009467, guid: cb68f14bbd5c59e499d7a248c3d75354,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -379,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823895358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.61, y: 2.29, z: 0}
+  m_LocalPosition: {x: -9.08, y: 2.29, z: 0}
   m_LocalScale: {x: 3.134742, y: 3.134742, z: 3.134742}
   m_Children:
   - {fileID: 1245213205}
@@ -501,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightAttack: 323
-  heavyAttack: 324
+  heavyAttack: 119
   anim: {fileID: 823895365}
   heavyHitbox: {fileID: 1573503165}
   heavyHitBoxRadius: -0.38
@@ -511,8 +512,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   lightAttackLockout: 0
-  heavyAttackLockout: 0
-  heavyAttackVulnerableTime: 0
+  heavyAttackLockout: 0.8
+  heavyAttackVulnerableTime: 0.4
   lockoutTimer: 0
   heavyAttackVulnerable: 0
 --- !u!1 &892706985

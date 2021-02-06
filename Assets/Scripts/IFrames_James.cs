@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IFrames_James : MonoBehaviour
 {
-    [SerializeField]float I_FRAMES_TIME;
+    [SerializeField]float iFramesTime;
     private bool isInvincible = false;
 
 
@@ -17,7 +17,7 @@ public class IFrames_James : MonoBehaviour
     public void StartIFramesTimer()    //Called by another script when i-frames should start.
     {
         isInvincible = true;
-        Invoke(nameof(IFramesOff), I_FRAMES_TIME);
+        Invoke(nameof(IFramesOff), iFramesTime);
     }
 
 

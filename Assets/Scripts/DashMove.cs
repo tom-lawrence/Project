@@ -5,7 +5,7 @@ using UnityEngine;
 public class DashMove : MonoBehaviour
 {
 
-    float horizontal;
+    public float horizontal;
     float vertical;
     public Rigidbody2D rb;
     IEnumerator dashCoroutine;
@@ -14,13 +14,18 @@ public class DashMove : MonoBehaviour
     float direction = 1;
     
     [SerializeField] float force;
-
+    [SerializeField] Animator anim;
+    [SerializeField] Transform Player;
+    [SerializeField] GameObject myPrefab;
 
     //Start is called before first frame update
 
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        
+
     }
 
 
@@ -40,7 +45,9 @@ public class DashMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && canDash == true)
         {
-            if(dashCoroutine != null)
+            //anim.SetTrigger("Dash");
+
+            if (dashCoroutine != null)
             {
                 StopCoroutine(dashCoroutine);
             }
@@ -74,7 +81,15 @@ public class DashMove : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-       
+        
+        anim.SetTrigger("Dash");
+        Instantiate(myPrefab, Player.position, new Quaternion(0,0,(horizontal * 90 - 90),0));
+
+
+
+
+
+
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;

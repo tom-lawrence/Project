@@ -20,7 +20,6 @@ public class DashMove : MonoBehaviour
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
-        normalGravity = rb.gravityscale;
     }
 
 

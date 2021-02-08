@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
 
     //void Update()
      //{ if (Input.GetKeyDown(KeyCode.Space))
-            { TakeDamage(20);
+            //{ TakeDamage(20);
     //}
 
     //void TakeDamage (int damage)

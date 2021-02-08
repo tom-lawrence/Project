@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 823895365}
   - component: {fileID: 823895366}
   - component: {fileID: 823895367}
+  - component: {fileID: 823895368}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -427,8 +428,6 @@ MonoBehaviour:
   animator: {fileID: 823895365}
   combatScript: {fileID: 823895366}
   BASE_SPEED: 10
-  LEFT_BUTTON: 97
-  RIGHT_BUTTON: 100
 --- !u!61 &823895363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -512,7 +511,7 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 0
-  lightAttackLockout: 0
+  lightAttackLockout: 0.4
   heavyAttackLockout: 0.8
   heavyAttackVulnerableTime: 0.4
   lockoutTimer: 0
@@ -532,6 +531,21 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  jumpVelocity: 10
+--- !u!114 &823895368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823895358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52cc2a4547c72c4da2378e09949b51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 823895361}
+  force: 40
 --- !u!1 &892706985
 GameObject:
   m_ObjectHideFlags: 0

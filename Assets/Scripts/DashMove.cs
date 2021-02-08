@@ -7,12 +7,13 @@ public class DashMove : MonoBehaviour
 
     float horizontal;
     float vertical;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     IEnumerator dashCoroutine;
     bool isDashing;
     bool canDash = true;
     float direction = 1;
-    float normalGravity;
+    
+    [SerializeField] float force;
 
 
     //Start is called before first frame update
@@ -28,6 +29,7 @@ public class DashMove : MonoBehaviour
 
     void Update ()
     {
+
         if(horizontal != 0)
         {
             direction = horizontal;
@@ -36,7 +38,7 @@ public class DashMove : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         //vertical = Input.GetAxisRaw("Jump");
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
+        if (Input.GetKeyDown(KeyCode.E) && canDash == true)
         {
             if(dashCoroutine != null)
             {
@@ -49,16 +51,20 @@ public class DashMove : MonoBehaviour
         }
 
 
+
+
+
+
     }
 
-    private void FixedUpdate()
+     void FixedUpdate()
     {
-        rb.AddForce(new Vector2(horizontal * 20, 0));
-        //rb.AddForce(new Vector2(0, vertical), ForceMode2D.Impulse;
+       
+      
 
         if (isDashing)
         {
-            rb.AddForce(new Vector2(direction * 10, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(direction * force, 0), ForceMode2D.Impulse);
         }
        
     }
@@ -68,14 +74,15 @@ public class DashMove : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-        rb.gravityScale = 0;
+       
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
-       
+      
+
     }
 
 

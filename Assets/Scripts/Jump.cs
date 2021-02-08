@@ -6,6 +6,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     [SerializeField] private LayerMask platformsLayerMask;
+    [SerializeField] private float jumpVelocity = 10f;
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
     private bool canDoubleJump;
@@ -30,7 +31,7 @@ public class Jump : MonoBehaviour
             if (IsGrounded())
             {
 
-                float jumpVelocity = 10f;
+                
                 rigidbody2d.velocity = Vector2.up * jumpVelocity;
                 
             }
@@ -38,7 +39,7 @@ public class Jump : MonoBehaviour
             {
                 if (canDoubleJump)
                 {
-                    float jumpVelocity = 10f;
+                    
                     rigidbody2d.velocity = Vector2.up * jumpVelocity;
                     canDoubleJump = false;
                 }

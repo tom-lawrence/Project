@@ -13,9 +13,11 @@ public class PlayerMovement_James : MonoBehaviour
 
     [SerializeField] float BASE_SPEED;
 
-    [SerializeField] KeyCode LEFT_BUTTON;
+    private KeyCode LEFT_BUTTON = KeyCode.A;
+    private KeyCode LEFT_BUTTON_ALT = KeyCode.LeftArrow;
 
-    [SerializeField] KeyCode RIGHT_BUTTON;
+    private KeyCode RIGHT_BUTTON = KeyCode.D;
+    private KeyCode RIGHT_BUTTON_ALT = KeyCode.RightArrow;
 
     bool facingRight = true;
 
@@ -35,7 +37,7 @@ public class PlayerMovement_James : MonoBehaviour
     void PlayerInput()
     {
 
-        if (Input.GetKey(LEFT_BUTTON))
+        if (Input.GetKey(LEFT_BUTTON) || Input.GetKey(LEFT_BUTTON_ALT))
         {
             MoveLeft();
 
@@ -45,7 +47,7 @@ public class PlayerMovement_James : MonoBehaviour
             facingRight = false;
         }
 
-        else if (Input.GetKey(RIGHT_BUTTON))
+        else if (Input.GetKey(RIGHT_BUTTON) || Input.GetKey(RIGHT_BUTTON_ALT))
         {
             MoveRight();
 
@@ -55,7 +57,7 @@ public class PlayerMovement_James : MonoBehaviour
             facingRight = true;
         }
 
-        if (!Input.GetKey(LEFT_BUTTON) && !Input.GetKey(RIGHT_BUTTON) && rb.velocity.x != 0)
+        else if (rb.velocity.x != 0)
         {
             ResetVelocity();
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Jump : MonoBehaviour
 {
     [SerializeField] private LayerMask platformsLayerMask;
-    private BoxCollider2D boxCollider2d;
+    private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
     private bool canDoubleJump;
     //Animator m_Animator;
@@ -14,7 +14,7 @@ public class Jump : MonoBehaviour
     {
         
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
-        boxCollider2d = transform.GetComponent<BoxCollider2D>();
+        circleCollider2d = transform.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class Jump : MonoBehaviour
      private bool IsGrounded()
      {
 
-         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down ,.1f, platformsLayerMask);
+         RaycastHit2D raycastHit2d = Physics2D.BoxCast(circleCollider2d.bounds.center, circleCollider2d.bounds.size, 0f, Vector2.down ,.1f, platformsLayerMask);
          Debug.Log(raycastHit2d.collider);
          return raycastHit2d.collider != null;
         

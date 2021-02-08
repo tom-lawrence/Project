@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DashMove : MonoBehaviour
 {
+    const KeyCode DASH_BUTTON = KeyCode.W;
 
     public float horizontal;
     float vertical;
@@ -18,18 +19,15 @@ public class DashMove : MonoBehaviour
     [SerializeField] Transform Player;
     [SerializeField] GameObject myPrefab;
 
+    public PlayerCombat_James combatScript;
+
     //Start is called before first frame update
 
     void start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        
-
     }
-
-
-
 
 
     void Update ()
@@ -43,7 +41,7 @@ public class DashMove : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         //vertical = Input.GetAxisRaw("Jump");
 
-        if (Input.GetKeyDown(KeyCode.E) && canDash == true)
+        if (Input.GetKeyDown(KeyCode.E) && canDash == true && combatScript.lockoutTimer <=0)
         {
             //anim.SetTrigger("Dash");
 

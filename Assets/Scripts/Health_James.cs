@@ -9,6 +9,9 @@ public class Health_James : MonoBehaviour
 
     private int health;
 
+    [SerializeField] KeyCode damageTestButton;
+    [SerializeField] int damageTestAmount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,8 @@ public class Health_James : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(damageTestButton))
+            TakeDamage(damageTestAmount);
     }
 
     public void TakeDamage(int damage)

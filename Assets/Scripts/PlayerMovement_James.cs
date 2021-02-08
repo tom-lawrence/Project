@@ -13,11 +13,11 @@ public class PlayerMovement_James : MonoBehaviour
 
     [SerializeField] float BASE_SPEED;
 
-    private KeyCode LEFT_BUTTON = KeyCode.A;
-    private KeyCode LEFT_BUTTON_ALT = KeyCode.LeftArrow;
+    private const KeyCode LEFT_BUTTON = KeyCode.A;
+    private const KeyCode LEFT_BUTTON_ALT = KeyCode.LeftArrow;
 
-    private KeyCode RIGHT_BUTTON = KeyCode.D;
-    private KeyCode RIGHT_BUTTON_ALT = KeyCode.RightArrow;
+    private const KeyCode RIGHT_BUTTON = KeyCode.D;
+    private const KeyCode RIGHT_BUTTON_ALT = KeyCode.RightArrow;
 
     bool facingRight = true;
 

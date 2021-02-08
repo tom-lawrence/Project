@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    const KeyCode JUMP_BUTTON = KeyCode.W;
+
     [SerializeField] private LayerMask platformsLayerMask;
     [SerializeField] private float jumpVelocity = 10f;
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
     private bool canDoubleJump;
+
+    public PlayerCombat_James combatScript;
     //Animator m_Animator;
     private void Awake()
     {
@@ -26,7 +30,7 @@ public class Jump : MonoBehaviour
             canDoubleJump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && combatScript.lockoutTimer <= 0)
         {
             if (IsGrounded())
             {

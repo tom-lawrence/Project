@@ -13,7 +13,7 @@ public class Jump : MonoBehaviour
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
     private bool canDoubleJump;
-
+    public PlayerCombat_James combatScript;
     //Animator m_Animator;
     [SerializeField] Animator anim;
 
@@ -34,7 +34,7 @@ public class Jump : MonoBehaviour
             //anim for landing trigger called
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && combatScript.lockoutTimer <= 0)
+        if (Input.GetKeyDown(JUMP_BUTTON) && combatScript.lockoutTimer <= 0)
         {
             if (IsGrounded())
             {

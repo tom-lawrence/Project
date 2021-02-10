@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
+    const KeyCode JUMP_BUTTON = KeyCode.W;
+
     [SerializeField] private LayerMask platformsLayerMask;
     [SerializeField] private float jumpVelocity = 10f;
 
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
-    private bool canDoubleJump;
-
+    private bool canDoubleJump;
+
     //Animator m_Animator;
     [SerializeField] Animator anim;
 
@@ -32,7 +34,7 @@ public class Jump : MonoBehaviour
             //anim for landing trigger called
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && combatScript.lockoutTimer <= 0)
         {
             if (IsGrounded())
             {
@@ -65,15 +67,15 @@ public class Jump : MonoBehaviour
      }
   
      
-    void AnimCall()
-    {
-
-
-
-
-    }
-
-
-
-
+    void AnimCall()
+    {
+
+
+
+
+    }
+
+
+
+
 }

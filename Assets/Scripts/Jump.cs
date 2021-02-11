@@ -12,7 +12,7 @@ public class Jump : MonoBehaviour
 
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
-    private bool canDoubleJump;
+    private bool canDoubleJump;    public PlayerCombat_James combatScript;
 
     //Animator m_Animator;
     [SerializeField] Animator anim;

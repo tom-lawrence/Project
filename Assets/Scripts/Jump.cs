@@ -12,8 +12,10 @@ public class Jump : MonoBehaviour
 
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
-    private bool canDoubleJump;    public PlayerCombat_James combatScript;
-
+    private bool canDoubleJump;
+    public PlayerCombat combatScript;
+
+
     //Animator m_Animator;
     [SerializeField] Animator anim;
 
@@ -62,20 +64,31 @@ public class Jump : MonoBehaviour
      private bool IsGrounded()
      {
          RaycastHit2D raycastHit2d = Physics2D.BoxCast(circleCollider2d.bounds.center, circleCollider2d.bounds.size, 0f, Vector2.down ,.1f, platformsLayerMask);
-         Debug.Log(raycastHit2d.collider);
+         //Debug.Log(raycastHit2d.collider);
          return raycastHit2d.collider != null;
      }
   
      
-    void AnimCall()
-    {
-
-
-
-
-    }
-
-
-
-
+    void AnimCall()
+
+    {
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 }

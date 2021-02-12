@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IFrames_James : MonoBehaviour
+public class IFrames : MonoBehaviour
 {
     [SerializeField]float iFramesTime;
     private bool isInvincible = false;

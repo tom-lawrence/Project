@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement_James : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     
     // For setting animation values
     [SerializeField] Animator animator;
 
-    public PlayerCombat_James combatScript;
+    public PlayerCombat combatScript;
 
     [SerializeField] float BASE_SPEED;
 

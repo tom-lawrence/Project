@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat_James : MonoBehaviour
+public class PlayerCombat : MonoBehaviour
 {
     //Controls
 
@@ -13,7 +13,7 @@ public class PlayerCombat_James : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Transform heavyHitbox;
     [SerializeField] float heavyHitBoxRadius;
-     
+
     [SerializeField] Transform lightHitbox;
     [SerializeField] float lightHitBoxRadius;
     [SerializeField] LayerMask enemiesLayer;

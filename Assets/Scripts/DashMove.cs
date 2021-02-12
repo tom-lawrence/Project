@@ -19,7 +19,7 @@ public class DashMove : MonoBehaviour
     [SerializeField] Transform Player;
     [SerializeField] GameObject myPrefab;
 
-    public PlayerCombat_James combatScript;
+    public PlayerCombat combatScript;
 
     //Start is called before first frame update
 

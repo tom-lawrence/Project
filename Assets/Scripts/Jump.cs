@@ -8,7 +8,13 @@ public class Jump : MonoBehaviour
     const KeyCode JUMP_BUTTON = KeyCode.W;
 
     [SerializeField] private LayerMask platformsLayerMask;
-    [SerializeField] private float jumpVelocity = 10f;
+    [SerializeField] float firstjumpVelocity = 10f;
+    [SerializeField] float secondjumpVelocity = 15;
+
+    [SerializeField] Transform Player;
+    [SerializeField] GameObject landEffectPrefab;
+    [SerializeField] GameObject doubleJumpEffectPrefab;
+    [SerializeField] bool hasLeftGround;
 
     private CircleCollider2D circleCollider2d;
     private Rigidbody2D rigidbody2d;
@@ -29,6 +35,8 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        animCheck();
+
         if(IsGrounded())
         {
             canDoubleJump = true;
@@ -42,18 +50,20 @@ public class Jump : MonoBehaviour
             {
 
                 
-                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                rigidbody2d.velocity = Vector2.up * firstjumpVelocity;
                 
             }
             else if (canDoubleJump)
             {
-                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                anim.Play("Player_DoubleJumpSetup");
+                Instantiate(doubleJumpEffectPrefab, new Vector3(Player.position.x, Player.position.y - 0.5f, Player.position.z), doubleJumpEffectPrefab.transform.rotation);
+                rigidbody2d.velocity = Vector2.up * secondjumpVelocity;
                 canDoubleJump = false;
             }
             
         }
 
-        AnimCall();
+        
         //Send the message to the Animator to activate the trigger parameter named "Jump"
         //m_Animator.SetTrigger("Jump");
 
@@ -68,27 +78,20 @@ public class Jump : MonoBehaviour
          return raycastHit2d.collider != null;
      }
   
-     
-    void AnimCall()
-
+         void animCheck()
     {
-
-
-
-
-
-
-
-
-
+        if (!IsGrounded())
+        {
+            hasLeftGround = true;
+        }
+        if (hasLeftGround == true && IsGrounded())
+        {
+            Instantiate(landEffectPrefab, new Vector3(Player.position.x, Player.position.y + 1.25f, Player.position.z), new Quaternion(0, 0, 0, 0));
+            hasLeftGround = false;
+        }
     }
-
-
-
-
-
-
-
-
-
+
+
+
+
 }

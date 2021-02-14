@@ -21,6 +21,10 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] float lightAttackLockout;
     [SerializeField] float heavyAttackLockout;
 
+    [SerializeField] int lightAttackDamage;
+    [SerializeField] int heavyAttackDamage;
+
+
     [SerializeField] float heavyAttackVulnerableTime;
 
     public float lockoutTimer = 0;
@@ -76,6 +80,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(enemy.name + " was hit.");
+            enemy.gameObject.GetComponent<Health>().TakeDamage(lightAttackDamage);
         }
 
     }
@@ -92,6 +97,7 @@ public class PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(enemy.name + " was hit.");
+            enemy.gameObject.GetComponent<Health>().TakeDamage(heavyAttackDamage);
         }
 
     }

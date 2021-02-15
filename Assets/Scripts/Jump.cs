@@ -78,7 +78,8 @@ public class Jump : MonoBehaviour
          return raycastHit2d.collider != null;
      }
   
-         void animCheck()
+     
+    void animCheck()
     {
         if (!IsGrounded())
         {
@@ -90,8 +91,12 @@ public class Jump : MonoBehaviour
             hasLeftGround = false;
         }
     }
-
-
-
-
+
+
+
+
+
+
+
+
 }

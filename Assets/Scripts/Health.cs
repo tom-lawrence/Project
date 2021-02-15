@@ -12,6 +12,10 @@ public class Health : MonoBehaviour
     [SerializeField] KeyCode damageTestButton;
     [SerializeField] int damageTestAmount;
 
+    [SerializeField] Animator anim;
+    [SerializeField] Rigidbody2D rb;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        //determine damage frame for player
+        playAnim();
         //if the player's health drops below 1, kill the player
         if (health <= 0)
             Die();
@@ -58,5 +64,22 @@ public class Health : MonoBehaviour
     {
         //Updates for UI go here.
         Debug.Log("hp updated");
+    }
+
+    void playAnim()
+    {
+        if (rb.velocity.y > 0)
+            anim.Play("PlayerJumpDamage");
+        
+        else if (rb.velocity.y < 0)
+            anim.Play("PlayerFallDamage");
+        
+        else if (Mathf.Abs(rb.velocity.x) > 0)
+            anim.Play("PlayerRunDamage");
+
+     
+
+
+
     }
 }

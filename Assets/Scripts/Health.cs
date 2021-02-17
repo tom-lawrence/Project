@@ -5,15 +5,21 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] int maxHealth;
+    [SerializeField] int maxHealth = 10;
 
     private int health;
 
     [SerializeField] KeyCode damageTestButton;
     [SerializeField] int damageTestAmount;
-
     [SerializeField] Animator anim;
-    [SerializeField] Rigidbody2D rb;
+
+    public PlayerMovement mov;
+    public PlayerCombat com;
+    public Jump jump;
+    public DashMove dash;
+    public Rigidbody2D rb;
+
+    public SpriteRenderer sprite;
 
 
     // Start is called before the first frame update
@@ -21,6 +27,9 @@ public class Health : MonoBehaviour
     {
         //Initialise the health values.
         health = maxHealth;
+
+ 
+
     }
 
     // Update is called once per frame
@@ -34,7 +43,8 @@ public class Health : MonoBehaviour
     {
         health -= damage;
         //determine damage frame for player
-        playAnim();
+        StartCoroutine(FlashRed());
+
         //if the player's health drops below 1, kill the player
         if (health <= 0)
             Die();
@@ -56,6 +66,14 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+            anim.Play("Player_Death");
+            mov.enabled = false;
+            com.enabled = false;
+            jump.enabled = false;
+            dash.enabled = false;
+            rb.isKinematic = true;
+            Destroy(gameObject, .65f);
+
         //Game over routine is called here.
         Debug.Log("player dead");
     }
@@ -66,20 +84,11 @@ public class Health : MonoBehaviour
         Debug.Log("hp updated");
     }
 
-    void playAnim()
+    public IEnumerator FlashRed()
     {
-        if (rb.velocity.y > 0)
-            anim.Play("PlayerJumpDamage");
-        
-        else if (rb.velocity.y < 0)
-            anim.Play("PlayerFallDamage");
-        
-        else if (Mathf.Abs(rb.velocity.x) > 0)
-            anim.Play("PlayerRunDamage");
-
-     
-
-
-
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        sprite.color = Color.white;
     }
+
 }

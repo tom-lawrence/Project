@@ -71,14 +71,15 @@ public class Jump : MonoBehaviour
 
 
     //Checks to see if player is grounded, (Using raycast box collider)
-     private bool IsGrounded()
+     public bool IsGrounded()
      {
          RaycastHit2D raycastHit2d = Physics2D.BoxCast(circleCollider2d.bounds.center, circleCollider2d.bounds.size, 0f, Vector2.down ,.1f, platformsLayerMask);
          //Debug.Log(raycastHit2d.collider);
          return raycastHit2d.collider != null;
      }
   
-         void animCheck()
+     
+    void animCheck()
     {
         if (!IsGrounded())
         {
@@ -90,8 +91,12 @@ public class Jump : MonoBehaviour
             hasLeftGround = false;
         }
     }
-
-
-
-
+
+
+
+
+
+
+
+
 }

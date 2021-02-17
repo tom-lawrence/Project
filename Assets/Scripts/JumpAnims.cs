@@ -6,7 +6,7 @@ public class JumpAnims : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb;
-
+ 
 
     // Update is called once per frame
     void Update()

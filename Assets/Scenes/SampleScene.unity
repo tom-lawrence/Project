@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 729248743}
   - component: {fileID: 729248745}
   - component: {fileID: 729248744}
+  - component: {fileID: 729248746}
   m_Layer: 0
   m_Name: boss_placeholder
   m_TagString: Untagged
@@ -697,6 +698,12 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  player: {fileID: 823895358}
+  maceThrowLockoutTime: 3
+  swingLockoutTime: 3
+  stompLockoutTime: 3
+  maceMeleeRange: 10
+  initBossLockout: 5
 --- !u!212 &729248745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -747,6 +754,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &729248746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729248742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c734e28aec337e45a3536701a062310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  damageTestButton: 0
+  damageTestAmount: 0
 --- !u!1 &823895358
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +985,8 @@ MonoBehaviour:
     m_Bits: 0
   lightAttackLockout: 0.4
   heavyAttackLockout: 0.8
+  lightAttackDamage: 0
+  heavyAttackDamage: 0
   heavyAttackVulnerableTime: 0.4
   lockoutTimer: 0
   heavyAttackVulnerable: 0

@@ -12,6 +12,9 @@ public class Health : MonoBehaviour
     [SerializeField] KeyCode damageTestButton;
     [SerializeField] int damageTestAmount;
 
+    [SerializeField] float iFramesTime;
+    private bool isInvincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +32,25 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
         //if the player's health drops below 1, kill the player
         if (health <= 0)
             Die();
+        else
+            StartIFramesTimer();
 
         UpdateHP();
     }
+
+    public int GetHP()
+    {
+        return health;
+    }
+    public int GetMaxHP()
+    {
+        return maxHealth;
+    }
+
 
     public void Heal(int amount)
     {
@@ -58,5 +74,24 @@ public class Health : MonoBehaviour
     {
         //Updates for UI go here.
         Debug.Log("hp updated");
+    }
+
+
+    private void IFramesOff()    //Called when i-frames are over.
+    {
+        isInvincible = false;
+    }
+
+
+    public void StartIFramesTimer()    //Called by another script when i-frames should start.
+    {
+        isInvincible = true;
+        Invoke(nameof(IFramesOff), iFramesTime);
+    }
+
+
+    public bool GetIsInvincible()    //Allows state of invicibility to be fetched externally.
+    {
+        return isInvincible;
     }
 }

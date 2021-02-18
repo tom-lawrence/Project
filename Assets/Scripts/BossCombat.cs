@@ -28,6 +28,8 @@ public class BossCombat : MonoBehaviour
     private int swinglockout;
     [SerializeField] int swingTimeBeforeDamage;
 
+    [SerializeField] Animator anim;
+
 
     void Start()
     {
@@ -96,6 +98,7 @@ public class BossCombat : MonoBehaviour
         //If the player is hit by
         if (attackCooldown <= swingCooldown - swingTimeBeforeDamage)
         {
+            anim.Play("Boss_Swing");
             Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
 
             if (hitPlayer != null)

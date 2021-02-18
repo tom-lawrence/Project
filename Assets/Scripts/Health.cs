@@ -12,10 +12,10 @@ public class Health : MonoBehaviour
     [SerializeField] KeyCode damageTestButton;
     [SerializeField] int damageTestAmount;
 
-    [SerializeField] Animator anim;
+    //[SerializeField] Animator anim;
 
 
-
+    /*
     public PlayerMovement mov;
 
     public PlayerCombat com;
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     public DashMove dash;
 
     public Rigidbody2D rb;
-
+    */
 
 
     public SpriteRenderer sprite;
@@ -95,7 +95,7 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-
+        /*
             anim.Play("Player_Death");
 
             mov.enabled = false;
@@ -109,7 +109,7 @@ public class Health : MonoBehaviour
             rb.isKinematic = true;
 
             Destroy(gameObject, .65f);
-
+        */
 
         //Game over routine is called here.
         Debug.Log("player dead");

@@ -8,11 +8,12 @@ public class MaceProjectile : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     [SerializeField] Transform maceProjHitbox;
     [SerializeField] float maceProjHitboxRadius;
-    [SerializeField] GameObject player;
 
     [SerializeField] int maceProjectileDamage;
 
     public Rigidbody2D rb;
+
+    private bool playerHit = false;
 
     // Update is called once per frame
     void Update()
@@ -21,10 +22,11 @@ public class MaceProjectile : MonoBehaviour
 
         Collider2D hitPlayer = Physics2D.OverlapCircle(maceProjHitbox.position, maceProjHitboxRadius, playerLayer);
 
-        if (hitPlayer != null)
+        if (hitPlayer != null && playerHit == false)
         {
             Debug.Log("Player was hit");
-            player.GetComponent<Health>().TakeDamage(maceProjectileDamage);
+            hitPlayer.GetComponent<Health>().TakeDamage(maceProjectileDamage);
+            playerHit = true;
         }
     }
 

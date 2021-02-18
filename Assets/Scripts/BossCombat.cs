@@ -93,13 +93,16 @@ public class BossCombat : MonoBehaviour
         //anim.SetTrigger("swing");
         Debug.Log("swing executed");
 
-        //If the player is hit by 
-        Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
-
-        if (hitPlayer != null)
+        //If the player is hit by
+        if (attackCooldown <= swingCooldown - swingTimeBeforeDamage)
         {
-            Debug.Log("Player was hit");
-            player.GetComponent<Health>().TakeDamage(swingDamage);
+            Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
+
+            if (hitPlayer != null)
+            {
+                Debug.Log("Player was hit");
+                player.GetComponent<Health>().TakeDamage(swingDamage);
+            }
         }
 
     }

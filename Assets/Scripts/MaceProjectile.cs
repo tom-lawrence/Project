@@ -30,10 +30,9 @@ public class MaceProjectile : MonoBehaviour
         }
     }
 
-    public void Throw(Vector2 velocity)
+    public void Throw(Vector2 velocity, float speed)
     {
-        rb.velocity = velocity;
-        Debug.Log(rb.velocity.ToString());
+        rb.velocity = velocity.normalized * speed;
     }
 
 

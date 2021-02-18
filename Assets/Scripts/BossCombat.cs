@@ -26,7 +26,7 @@ public class BossCombat : MonoBehaviour
     [SerializeField] float initBossLockout;
 
     private int swinglockout;
-    [SerializeField] int swingTimeBeforeDamage;
+    [SerializeField] float swingTimeBeforeDamage;
 
     [SerializeField] Animator anim;
 
@@ -66,7 +66,8 @@ public class BossCombat : MonoBehaviour
             if (Vector2.Distance(transform.position, player.transform.position) <= maceMeleeRange)
             {
                 attackCooldown = swingCooldown;
-                Swing();
+                anim.Play("Boss_Smash");
+                Invoke(nameof(Swing), swingTimeBeforeDamage);
 
             }
 
@@ -96,16 +97,14 @@ public class BossCombat : MonoBehaviour
         Debug.Log("swing executed");
 
         //If the player is hit by
-        if (attackCooldown <= swingCooldown - swingTimeBeforeDamage)
-        {
-            anim.Play("Boss_Smash");
-            Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
 
-            if (hitPlayer != null)
-            {
-                Debug.Log("Player was hit");
-                player.GetComponent<Health>().TakeDamage(swingDamage);
-            }
+
+        Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
+
+        if (hitPlayer != null)
+        {
+            Debug.Log("Player was hit");
+            player.GetComponent<Health>().TakeDamage(swingDamage);
         }
 
     }
@@ -117,7 +116,7 @@ public class BossCombat : MonoBehaviour
         maceproj.transform.position = transform.position;
 
         Debug.Log((player.transform.position - transform.position).ToString());
-        maceproj.GetComponent<MaceProjectile>().Throw((player.transform.position - transform.position) * maceProjSpeed);
+        maceproj.GetComponent<MaceProjectile>().Throw(player.transform.position - transform.position, maceProjSpeed);
     }
 
     void Stomp()

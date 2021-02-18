@@ -21,6 +21,9 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] float lightAttackLockout;
     [SerializeField] float heavyAttackLockout;
 
+    [SerializeField] float timeBeforeHeavyAttack;
+    [SerializeField] float timeBeforeLightAttack;
+
     [SerializeField] int lightAttackDamage;
     [SerializeField] int heavyAttackDamage;
 
@@ -58,12 +61,15 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetKeyDown(lightAttack))
         {
-            LightAttack();
+            anim.SetTrigger("LightAttack"); //set trigger parameter to LightAttack
+            Invoke(nameof(HeavyAttack), timeBeforeLightAttack);
         }
 
         if (Input.GetKeyDown(heavyAttack))
         {
-            HeavyAttack();
+            anim.SetTrigger("HeavyAttack");
+            Invoke(nameof(HeavyAttack), timeBeforeHeavyAttack);
+
         }
 
     }
@@ -71,7 +77,6 @@ public class PlayerCombat : MonoBehaviour
     //Everything that happens when the light attack button is pressed.
     void LightAttack()
     {
-        anim.SetTrigger("LightAttack"); //set trigger parameter to LightAttack
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(lightHitbox.position, lightHitBoxRadius, enemiesLayer);
 
@@ -88,7 +93,6 @@ public class PlayerCombat : MonoBehaviour
     //Everything that happens when the heavy attack button is pressed.
     void HeavyAttack()
     {
-        anim.SetTrigger("HeavyAttack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(heavyHitbox.position, heavyHitBoxRadius, enemiesLayer);
 

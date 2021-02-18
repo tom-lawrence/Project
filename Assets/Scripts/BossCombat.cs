@@ -98,7 +98,7 @@ public class BossCombat : MonoBehaviour
         //If the player is hit by
         if (attackCooldown <= swingCooldown - swingTimeBeforeDamage)
         {
-            anim.Play("Boss_Swing");
+            anim.Play("Boss_Smash");
             Collider2D hitPlayer = Physics2D.OverlapCircle(swingHitbox.position, swingHitBoxRadius, playerLayer);
 
             if (hitPlayer != null)

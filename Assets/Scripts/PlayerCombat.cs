@@ -62,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(lightAttack))
         {
             anim.SetTrigger("LightAttack"); //set trigger parameter to LightAttack
+            lockoutTimer = lightAttackLockout;
             Invoke(nameof(HeavyAttack), timeBeforeLightAttack);
         }
 
@@ -69,6 +70,7 @@ public class PlayerCombat : MonoBehaviour
         {
            
             anim.SetTrigger("HeavyAttack");
+            lockoutTimer = heavyAttackLockout;
             Invoke(nameof(HeavyAttack), timeBeforeHeavyAttack);
         }
 
@@ -79,8 +81,6 @@ public class PlayerCombat : MonoBehaviour
     {
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(lightHitbox.position, lightHitBoxRadius, enemiesLayer);
-
-        lockoutTimer = lightAttackLockout;
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -93,12 +93,9 @@ public class PlayerCombat : MonoBehaviour
     //Everything that happens when the heavy attack button is pressed.
     void HeavyAttack()
     {
-        
-
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(heavyHitbox.position, heavyHitBoxRadius, enemiesLayer);
 
-        lockoutTimer = heavyAttackLockout;
 
         foreach (Collider2D enemy in hitEnemies)
         {

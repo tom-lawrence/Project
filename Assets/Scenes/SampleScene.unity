@@ -791,7 +791,7 @@ MonoBehaviour:
   swingDamage: 0
   maceProjSpeed: 20
   initBossLockout: 5
-  swingTimeBeforeDamage: 1
+  swingTimeBeforeDamage: 0
   anim: {fileID: 729248748}
 --- !u!212 &729248745
 SpriteRenderer:

@@ -9,11 +9,15 @@ public class MaceProjectile : MonoBehaviour
     [SerializeField] Transform maceProjHitbox;
     [SerializeField] float maceProjHitboxRadius;
 
+    [SerializeField] float timeOnScreen;
+
     [SerializeField] int maceProjectileDamage;
 
     public Rigidbody2D rb;
 
     private bool playerHit = false;
+
+    private bool inMotion = false;
 
     // Update is called once per frame
     void Update()
@@ -33,8 +37,13 @@ public class MaceProjectile : MonoBehaviour
     public void Throw(Vector2 velocity, float speed)
     {
         rb.velocity = velocity.normalized * speed;
+        Invoke(nameof(DestroyThis), timeOnScreen);
     }
 
+    private void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 
     private void OnDrawGizmosSelected()
     {

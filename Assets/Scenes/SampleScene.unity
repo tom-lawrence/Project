@@ -629,9 +629,9 @@ MonoBehaviour:
   stompCooldown: 0
   maceMeleeRange: 20
   swingDamage: 0
-  maceProjSpeed: 0.5
+  maceProjSpeed: 20
   initBossLockout: 5
-  swingTimeBeforeDamage: 0
+  swingTimeBeforeDamage: 1
   anim: {fileID: 729248748}
 --- !u!212 &729248745
 SpriteRenderer:
@@ -963,8 +963,10 @@ MonoBehaviour:
     m_Bits: 1024
   lightAttackLockout: 0.4
   heavyAttackLockout: 0.8
+  timeBeforeHeavyAttack: 0.5
+  timeBeforeLightAttack: 0.25
   lightAttackDamage: 15
-  heavyAttackDamage: 0
+  heavyAttackDamage: 20
   heavyAttackVulnerableTime: 0.4
   lockoutTimer: 0
   heavyAttackVulnerable: 0
@@ -1043,7 +1045,7 @@ MonoBehaviour:
   damageTestButton: 113
   damageTestAmount: 1
   sprite: {fileID: 823895359}
-  iFramesTime: 4
+  iFramesTime: 1
 --- !u!1 &892706985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979141360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 1.55, z: 1.115}
+  m_LocalPosition: {x: -3.23, y: 1.55, z: 1.115}
   m_LocalScale: {x: 9.462239, y: 9.462239, z: 9.462239}
   m_Children: []
   m_Father: {fileID: 1921751834}

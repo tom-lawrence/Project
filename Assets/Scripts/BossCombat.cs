@@ -76,7 +76,8 @@ public class BossCombat : MonoBehaviour
                 if (Random.Range(0, 1) <= 0.5)
                 {
                     attackCooldown = maceThrowCooldown;
-                    MaceThrow();
+                    anim.Play("Boss_Yeet");
+                    StartCoroutine(MaceThrowEnum());
                 }
 
                 else
@@ -109,9 +110,18 @@ public class BossCombat : MonoBehaviour
 
     }
 
+    public IEnumerator MaceThrowEnum()
+    {
+        yield return new WaitForSeconds(1f);
+        MaceThrow();
+    }
+
+
     void MaceThrow()
     {
         Debug.Log("mace thrown");
+        
+
         GameObject maceproj = Instantiate(maceProjPrefab);
         maceproj.transform.position = transform.position;
 

@@ -597,7 +597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729248742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.3, y: -5.24, z: 0}
+  m_LocalPosition: {x: 20.31, y: -5.31, z: 0}
   m_LocalScale: {x: 11.470628, y: 11.470628, z: 11.470628}
   m_Children:
   - {fileID: 1430639933}
@@ -624,7 +624,7 @@ MonoBehaviour:
   player: {fileID: 823895358}
   maceProjPrefab: {fileID: 8555366913603611304, guid: 29766cc4de3bf2c44a6322bc2d878444,
     type: 3}
-  maceThrowCooldown: 3
+  maceThrowCooldown: 5.04
   swingCooldown: 3.02
   stompCooldown: 0
   maceMeleeRange: 20
@@ -678,7 +678,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -719,7 +719,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 10, y: 10}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -832,7 +832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823895358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.93, y: 10, z: 0}
+  m_LocalPosition: {x: -18.7, y: -9.31, z: 0}
   m_LocalScale: {x: 3.134742, y: 3.134742, z: 3.134742}
   m_Children:
   - {fileID: 1245213205}
@@ -964,7 +964,7 @@ MonoBehaviour:
   lightAttackLockout: 0.4
   heavyAttackLockout: 0.8
   timeBeforeHeavyAttack: 0.5
-  timeBeforeLightAttack: 0.25
+  timeBeforeLightAttack: 0.15
   lightAttackDamage: 15
   heavyAttackDamage: 20
   heavyAttackVulnerableTime: 0.4

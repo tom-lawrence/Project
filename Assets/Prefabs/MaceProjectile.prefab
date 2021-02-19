@@ -103,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: ee85b6ef4216efc4ca3058bbab76196e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,13 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914ab1f286034df4a9bae050cbfebe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 2000
+  rotationAngle: 1500
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
   maceProjHitbox: {fileID: 1995206566648714453}
   maceProjHitboxRadius: 5.94
-  timeOnScreen: 4
+  timeOnScreen: 3
   maceProjectileDamage: 20
   rb: {fileID: 8830164940535018634}
 --- !u!61 &4348980013653404755

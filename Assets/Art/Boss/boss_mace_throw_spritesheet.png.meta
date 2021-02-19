@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: e2335226ae9270746bbc4454c876f753
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6231184625227093799
+    second: boss_mace_throw_spritesheet_0
+  - first:
+      213: 660386702736602413
+    second: boss_mace_throw_spritesheet_1
+  - first:
+      213: -6294545924409806555
+    second: boss_mace_throw_spritesheet_2
+  - first:
+      213: -1904628387717805720
+    second: boss_mace_throw_spritesheet_3
+  - first:
+      213: 9068622302857774544
+    second: boss_mace_throw_spritesheet_4
+  - first:
+      213: -6616605332221401829
+    second: boss_mace_throw_spritesheet_5
+  - first:
+      213: 3752654042689852551
+    second: boss_mace_throw_spritesheet_6
+  - first:
+      213: 4263718944909407069
+    second: boss_mace_throw_spritesheet_7
+  - first:
+      213: -565602511403340765
+    second: boss_mace_throw_spritesheet_8
+  - first:
+      213: -4494841800106569636
+    second: boss_mace_throw_spritesheet_9
+  - first:
+      213: 5401812516879015140
+    second: boss_mace_throw_spritesheet_10
+  - first:
+      213: -5916369479479485042
+    second: boss_mace_throw_spritesheet_11
+  - first:
+      213: -2395555144138167325
+    second: boss_mace_throw_spritesheet_12
+  - first:
+      213: 5750274667159119355
+    second: boss_mace_throw_spritesheet_13
+  - first:
+      213: 6195562959707540593
+    second: boss_mace_throw_spritesheet_14
+  - first:
+      213: 5551186796817145627
+    second: boss_mace_throw_spritesheet_15
+  - first:
+      213: -8663809336897985428
+    second: boss_mace_throw_spritesheet_16
+  - first:
+      213: -8005709297965499719
+    second: boss_mace_throw_spritesheet_17
+  - first:
+      213: -5384811786934031339
+    second: boss_mace_throw_spritesheet_18
+  - first:
+      213: -6407687190318068960
+    second: boss_mace_throw_spritesheet_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.57204473, y: 0.502573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25b10f053a2a2900800000000000000
+      internalID: 660386702736602413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5733311, y: 0.5034027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86984f092966195e0800000000000000
+      internalID: -1904628387717805720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 138
+      alignment: 9
+      pivot: {x: 0.587725, y: 0.46124533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15ecf1b1881d24a0800000000000000
+      internalID: -6616605332221401829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 139
+      alignment: 9
+      pivot: {x: 0.58876944, y: 0.45333928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53bd6d4ac5cb2b30800000000000000
+      internalID: 4263718944909407069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 158
+      alignment: 9
+      pivot: {x: 0.57590425, y: 0.40139037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50121f823d1f91c0800000000000000
+      internalID: -4494841800106569636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5805838, y: 0.49259186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d99affd45d4eda0800000000000000
+      internalID: -5916369479479485042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.56927377, y: 0.49390936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf562f0f7541dcf40800000000000000
+      internalID: 5750274667159119355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5815953, y: 0.5173335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fdf12faf6c90d40800000000000000
+      internalID: 5551186796817145627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5823999, y: 0.3992267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba79bf3fc106e090800000000000000
+      internalID: -8005709297965499719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_mace_throw_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5933077, y: 0.49112767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b454523725317a0800000000000000
+      internalID: -6407687190318068960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -76,9 +76,9 @@ public class BossCombat : MonoBehaviour
                 if (Random.Range(0, 1) <= 0.5)
                 {
                     attackCooldown = maceThrowCooldown;
-                    anim.Play("Boss_Yeet");
+                    anim.Play("Boss_Yeet"); 
                     StartCoroutine(MaceThrowEnum());
-                    SoundManager.PlaySound("MaceSwooshFX");
+                    
                 }
 
                 else
@@ -97,7 +97,7 @@ public class BossCombat : MonoBehaviour
     {
         //anim.SetTrigger("swing");
         Debug.Log("swing executed");
-        SoundManager.PlaySound("BossSwingFX");
+        //SoundManager.PlaySound("BossSwingFX");
 
         //If the player is hit by
 

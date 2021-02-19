@@ -55,7 +55,6 @@ public class Jump : MonoBehaviour
             }
             else if (canDoubleJump)
             {
-                SoundManager.PlaySound("PlayerJumpFX");
                 anim.Play("Player_DoubleJumpSetup");
                 Instantiate(doubleJumpEffectPrefab, new Vector3(Player.position.x, Player.position.y - 0.5f, Player.position.z), doubleJumpEffectPrefab.transform.rotation);
                 rigidbody2d.velocity = Vector2.up * secondjumpVelocity;

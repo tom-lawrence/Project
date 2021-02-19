@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 729248744}
   - component: {fileID: 729248746}
   - component: {fileID: 729248747}
+  - component: {fileID: 729248749}
   m_Layer: 10
   m_Name: boss_placeholder
   m_TagString: Enemy
@@ -907,6 +908,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &729248749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729248742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbca29317ea6f144821b6acdc9870ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823895358
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +940,7 @@ GameObject:
   - component: {fileID: 823895368}
   - component: {fileID: 823895369}
   - component: {fileID: 823895370}
+  - component: {fileID: 823895371}
   m_Layer: 9
   m_Name: MainPlayer
   m_TagString: Player
@@ -1122,7 +1136,7 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 1024
-  lightAttackLockout: 0.4
+  lightAttackLockout: 0
   heavyAttackLockout: 0.8
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15
@@ -1209,6 +1223,18 @@ MonoBehaviour:
   player: {fileID: 823895358}
   sprite: {fileID: 823895359}
   iFramesTime: 1
+--- !u!114 &823895371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823895358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbca29317ea6f144821b6acdc9870ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858732985
 GameObject:
   m_ObjectHideFlags: 0

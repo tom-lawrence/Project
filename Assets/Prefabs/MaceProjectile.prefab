@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914ab1f286034df4a9bae050cbfebe1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngle: 1500
+  rotationAngle: 600
   playerLayer:
     serializedVersion: 2
     m_Bits: 512

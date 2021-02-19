@@ -78,6 +78,7 @@ public class BossCombat : MonoBehaviour
                     attackCooldown = maceThrowCooldown;
                     anim.Play("Boss_Yeet");
                     StartCoroutine(MaceThrowEnum());
+                    SoundManager.PlaySound("MaceSwooshFX");
                 }
 
                 else
@@ -96,6 +97,7 @@ public class BossCombat : MonoBehaviour
     {
         //anim.SetTrigger("swing");
         Debug.Log("swing executed");
+        SoundManager.PlaySound("BossSwingFX");
 
         //If the player is hit by
 
@@ -106,6 +108,7 @@ public class BossCombat : MonoBehaviour
         {
             Debug.Log("Player was hit");
             player.GetComponent<Health>().TakeDamage(swingDamage);
+
         }
 
     }
@@ -114,6 +117,11 @@ public class BossCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         MaceThrow();
+    }
+    public IEnumerator SwingEnum()
+    {
+        yield return new WaitForSeconds(1f);
+        Swing();
     }
 
 

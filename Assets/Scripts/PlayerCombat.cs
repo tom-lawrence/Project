@@ -61,15 +61,16 @@ public class PlayerCombat : MonoBehaviour
 
         if (Input.GetKeyDown(lightAttack))
         {
+            SoundManager.PlaySound("StabFX");
             anim.SetTrigger("LightAttack"); //set trigger parameter to LightAttack
             Invoke(nameof(HeavyAttack), timeBeforeLightAttack);
         }
 
         if (Input.GetKeyDown(heavyAttack))
         {
+           
             anim.SetTrigger("HeavyAttack");
             Invoke(nameof(HeavyAttack), timeBeforeHeavyAttack);
-
         }
 
     }
@@ -93,6 +94,8 @@ public class PlayerCombat : MonoBehaviour
     //Everything that happens when the heavy attack button is pressed.
     void HeavyAttack()
     {
+        SoundManager.PlaySound("SwingFX");
+
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(heavyHitbox.position, heavyHitBoxRadius, enemiesLayer);
 
@@ -102,6 +105,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Debug.Log(enemy.name + " was hit.");
             enemy.gameObject.GetComponent<Health>().TakeDamage(heavyAttackDamage);
+
         }
 
     }

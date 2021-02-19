@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     [SerializeField] KeyCode damageTestButton;
     [SerializeField] int damageTestAmount;
+    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject player;
 
     //[SerializeField] Animator anim;
 
@@ -56,6 +58,7 @@ public class Health : MonoBehaviour
         if (!isInvincible)
         {
             health -= damage;
+            TakeDamageFX();
 
             //determine damage frame for player
             StartCoroutine(FlashRed());
@@ -154,5 +157,17 @@ public class Health : MonoBehaviour
 
     }
 
+    public void TakeDamageFX()
+    {
+        if(player.tag == "Player")
+        {
+            SoundManager.PlaySound("PlayerPainFX");
+        }
+        else if (player.tag == "Enemy")
+        {
+            SoundManager.PlaySound("BossPainFX");
+        }
+    }
+    
 
 }

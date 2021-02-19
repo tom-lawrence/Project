@@ -47,6 +47,7 @@ public class DashMove : MonoBehaviour
 
             if (dashCoroutine != null)
             {
+                
                 StopCoroutine(dashCoroutine);
             }
             dashCoroutine = Dash(.1f, 1);
@@ -82,7 +83,7 @@ public class DashMove : MonoBehaviour
         
         anim.SetTrigger("Dash");
         Instantiate(myPrefab, Player.position, new Quaternion(0,0,(horizontal * 90 - 90),0));
-
+        SoundManager.PlaySound("PlayerDashFX");
 
 
 

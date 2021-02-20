@@ -10,6 +10,7 @@ public class BossCombat : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     [SerializeField] GameObject player;
     [SerializeField] GameObject maceProjPrefab;
+    [SerializeField] GameObject spearPrefab;
 
     Health bossHealth;
 
@@ -21,6 +22,7 @@ public class BossCombat : MonoBehaviour
     [SerializeField] float maceMeleeRange;      //Range player has to be in for the boss to use the melee attack.
     [SerializeField] int swingDamage;
     [SerializeField] float maceProjSpeed;
+    [SerializeField] float spearSpeed;
 
     private float attackCooldown = 0;    //the amount of time a boss has before it can use another attack.
     [SerializeField] float initBossLockout;
@@ -30,12 +32,20 @@ public class BossCombat : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    [SerializeField] Vector2 TopLeftPos;
+    [SerializeField] Vector2 BottomRightPos;
 
+    private int noOfAtks = 0;
+    [SerializeField] int atksToTP;
+
+    private int dir = 1;
     void Start()
     {
         bossHealth = GetComponent<Health>();
 
         attackCooldown = initBossLockout;
+
+        Teleport();
     }
 
 
@@ -53,7 +63,11 @@ public class BossCombat : MonoBehaviour
         if (bossHealth.GetHP() < bossHealth.GetMaxHP())
         {
             BossMainPhase();
+
         }
+
+
+        
     }
 
     void BossMainPhase()
@@ -62,33 +76,41 @@ public class BossCombat : MonoBehaviour
 
         if (attackCooldown <= 0)
         {
+            noOfAtks++;
+
+            if (noOfAtks >= atksToTP)
+            {
+                Flip();
+                Teleport();
+                noOfAtks = 0;
+            }
+
             //If the player is in melee range, execute the melee attack.
             if (Vector2.Distance(transform.position, player.transform.position) <= maceMeleeRange)
             {
-                attackCooldown = swingCooldown;
-                anim.Play("Boss_Smash");
-                Invoke(nameof(Swing), swingTimeBeforeDamage);
-
-            }
-
-            else
-            {
-                if (Random.Range(0, 1) <= 0.5)
+                if (Random.Range(0, 100) > 50)
                 {
-                    attackCooldown = maceThrowCooldown;
-                    anim.Play("Boss_Yeet"); 
-                    StartCoroutine(MaceThrowEnum());
-                    
+                    attackCooldown = swingCooldown;
+                    anim.Play("Boss_Smash");
+                    Invoke(nameof(Swing), swingTimeBeforeDamage);
+
                 }
 
                 else
                 {
                     attackCooldown = stompCooldown;
                     Stomp();
-
                 }
-
             }
+
+
+            else
+            {
+                attackCooldown = maceThrowCooldown;
+                anim.Play("Boss_Yeet"); 
+                StartCoroutine(MaceThrowEnum());
+            }
+
         }
     }
 
@@ -128,7 +150,6 @@ public class BossCombat : MonoBehaviour
     void MaceThrow()
     {
         Debug.Log("mace thrown");
-        
 
         GameObject maceproj = Instantiate(maceProjPrefab);
         maceproj.transform.position = transform.position;
@@ -140,6 +161,32 @@ public class BossCombat : MonoBehaviour
     void Stomp()
     {
         Debug.Log("stomp executed");
+
+        GameObject spear = Instantiate(spearPrefab);
+        spear.transform.position = transform.position;
+        //spear.transform.position = new Vector3(spear.transform.position.x, spear.transform.position.y, 0.5f);
+        spear.transform.localScale *= dir;
+
+        spear.GetComponent<Spears>().Launch(spearSpeed, dir);
+    }
+
+    void Teleport()
+    {
+        if (dir == -1)
+        {
+            transform.position = TopLeftPos;
+        }
+        else
+        {
+            transform.position = BottomRightPos;
+        }
+
+    }
+
+    void Flip()
+    {
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        dir *= -1;
     }
 
     private void OnDrawGizmosSelected()

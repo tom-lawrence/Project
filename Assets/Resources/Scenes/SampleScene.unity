@@ -757,8 +757,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729248742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.31, y: -5.31, z: 0}
-  m_LocalScale: {x: 11.470628, y: 11.470628, z: 11.470628}
+  m_LocalPosition: {x: 21.3, y: -5.21, z: 0}
+  m_LocalScale: {x: 11.47063, y: 11.470628, z: 11.470628}
   m_Children:
   - {fileID: 1430639933}
   m_Father: {fileID: 1006649688}
@@ -784,15 +784,21 @@ MonoBehaviour:
   player: {fileID: 823895358}
   maceProjPrefab: {fileID: 8555366913603611304, guid: 29766cc4de3bf2c44a6322bc2d878444,
     type: 3}
+  spearPrefab: {fileID: 5387208753222811682, guid: 2c6648eb530f22b4fbf8fe2daa39af26,
+    type: 3}
   maceThrowCooldown: 5.04
   swingCooldown: 3.02
-  stompCooldown: 0
+  stompCooldown: 1
   maceMeleeRange: 20
   swingDamage: 0
   maceProjSpeed: 20
+  spearSpeed: 30
   initBossLockout: 5
-  swingTimeBeforeDamage: 0
+  swingTimeBeforeDamage: 1
   anim: {fileID: 729248748}
+  TopLeftPos: {x: -23.5, y: 7.7}
+  BottomRightPos: {x: 20.31, y: -6.3}
+  atksToTP: 5
 --- !u!212 &729248745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -856,7 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c734e28aec337e45a3536701a062310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   damageTestButton: 0
   damageTestAmount: 5
   enemy: {fileID: 729248742}
@@ -1136,7 +1142,7 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 1024
-  lightAttackLockout: 0
+  lightAttackLockout: 0.5
   heavyAttackLockout: 0.8
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15

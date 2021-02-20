@@ -17,8 +17,6 @@ public class MaceProjectile : MonoBehaviour
 
     private bool playerHit = false;
 
-    private bool inMotion = false;
-
     // Update is called once per frame
     void Update()
     {

@@ -13,8 +13,8 @@ public class Health : MonoBehaviour
     [SerializeField] int damageTestAmount;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject player;
-    [SerializeField] BossSlider bossSlider;
-    [SerializeField] PlayerSlider playerSlider;
+    [SerializeField] GameObject bossSlider;
+    [SerializeField] GameObject playerSlider;
 
     //[SerializeField] Animator anim;
 
@@ -44,8 +44,9 @@ public class Health : MonoBehaviour
         //Initialise the health values.
         health = maxHealth;
 
-        bossSlider.SetBossMaxHealth(health); 
-        playerSlider.SetPlayerMaxHealth(health); 
+        
+        //playerSlider.GetComponent<PlayerSlider>().SetPlayerMaxHealth(health); 
+        //bossSlider.GetComponent<BossSlider>().SetBossMaxHealth(health); 
 
     }
 

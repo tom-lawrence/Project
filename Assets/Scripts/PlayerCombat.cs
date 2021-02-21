@@ -30,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
 
     [SerializeField] float heavyAttackVulnerableTime;
 
-    [SerializeField] PlayerSlider playerSlider;
+    [SerializeField] GameObject playerSlider;
 
     public float lockoutTimer = 0;
 
@@ -55,7 +55,9 @@ public class PlayerCombat : MonoBehaviour
             //If the lockout timer is zero, allow the player to input.
             PlayerInput();
 
-        playerSlider.SetPlayerHealth(GetComponent<Health>().GetHP());
+        playerSlider.GetComponent<PlayerSlider>().SetPlayerHealth(GetComponent<Health>().GetHP());
+        
+
     }
 
     //Player input goes here.

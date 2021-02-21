@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5112426746921295360}
   - component: {fileID: 9181581160102467232}
   m_Layer: 0
-  m_Name: MaceProjectile 1
+  m_Name: spearPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   timeOnScreen: 4
-  spearDamage: 5
+  spearDamage: 20
 --- !u!1 &8722046401094745742
 GameObject:
   m_ObjectHideFlags: 0

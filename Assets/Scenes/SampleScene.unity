@@ -541,7 +541,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e2cc4e344138d98409d410a53c10acc0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.17
+  m_Volume: 0.08
   m_Pitch: 0.72
   Loop: 0
   Mute: 0
@@ -710,6 +710,7 @@ GameObject:
   - component: {fileID: 376532248}
   - component: {fileID: 376532250}
   - component: {fileID: 376532249}
+  - component: {fileID: 376532251}
   m_Layer: 5
   m_Name: border
   m_TagString: Untagged
@@ -773,6 +774,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376532247}
   m_CullTransparentMesh: 0
+--- !u!114 &376532251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376532247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 0
 --- !u!1 &438259897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 307, y: -62}
+  m_AnchoredPosition: {x: 542, y: -33}
   m_SizeDelta: {x: 587.71594, y: 20.53006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173502590
@@ -2037,9 +2053,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 200
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3332,7 +3348,7 @@ RectTransform:
   m_GameObject: {fileID: 1689985189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3207, y: 1.3207, z: 1.3207}
   m_Children:
   - {fileID: 375551464}
   - {fileID: 376532248}
@@ -3341,7 +3357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 113.9, y: 28.1}
+  m_AnchoredPosition: {x: 124, y: 31}
   m_SizeDelta: {x: 101.57684, y: 13.016693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689985191
@@ -3388,9 +3404,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 200
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3580,6 +3596,7 @@ GameObject:
   - component: {fileID: 1924431579}
   - component: {fileID: 1924431581}
   - component: {fileID: 1924431580}
+  - component: {fileID: 1924431582}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -3643,6 +3660,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924431578}
   m_CullTransparentMesh: 0
+--- !u!114 &1924431582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924431578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1940403549
 GameObject:
   m_ObjectHideFlags: 0

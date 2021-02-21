@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
         if (!isInvincible)
         {
             health -= damage;
-            bossSlider.SetBossHealth(health);
+            //bossSlider.SetBossHealth(health);
             TakeDamageFX();
 
             //determine damage frame for player

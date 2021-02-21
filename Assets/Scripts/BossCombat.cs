@@ -97,8 +97,9 @@ public class BossCombat : MonoBehaviour
 
                 else
                 {
+                    anim.Play("Boss_Arrow");
                     attackCooldown = stompCooldown;
-                    Stomp();
+                    StartCoroutine(StompEnum());
                 }
             }
 
@@ -144,6 +145,11 @@ public class BossCombat : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Swing();
     }
+    public IEnumerator StompEnum()
+    {
+        yield return new WaitForSeconds(1f);
+        Stomp();
+    }
 
 
     void MaceThrow()
@@ -159,6 +165,7 @@ public class BossCombat : MonoBehaviour
 
     void Stomp()
     {
+
         Debug.Log("stomp executed");
         for(int i = 0; i < 10 ; i += 2)
         {

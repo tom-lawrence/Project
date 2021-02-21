@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    // ---------------Boss-----------------
   void SwingFX()
     {
         SoundManager.PlaySound("BossSwingFX");
@@ -14,7 +15,17 @@ public class SoundPlayer : MonoBehaviour
     {
         SoundManager.PlaySound("MaceSwooshFX");
     }
-    
+    void BossLaughFX()
+    {
+        SoundManager.PlaySound("BossLaughFX");
+    }
+
+    //---------------Player--------------
+    void JumpFX()
+    {
+        SoundManager.PlaySound("PlayerJumpFX");
+    }
+
     void LightAttackFX()
     {
         SoundManager.PlaySound("StabFX");
@@ -25,9 +36,5 @@ public class SoundPlayer : MonoBehaviour
         SoundManager.PlaySound("SwingFX");
     }
 
-    void JumpFX()
-    {
-        SoundManager.PlaySound("PlayerJumpFX");
-    }
 
 }

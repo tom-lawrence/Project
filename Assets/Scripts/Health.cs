@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
         //Initialise the health values.
         health = maxHealth;
 
-        bossSlider.SetBossMaxHealth(maxHealth); 
+        bossSlider.SetBossMaxHealth(health); 
 
     }
 
@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
         if (!isInvincible)
         {
             health -= damage;
-            //bossSlider.SetBossHealth(health);
+            bossSlider.SetBossHealth(health);
             TakeDamageFX();
 
             //determine damage frame for player

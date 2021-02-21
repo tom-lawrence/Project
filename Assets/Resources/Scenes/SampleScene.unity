@@ -863,11 +863,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  damageTestButton: 0
-  damageTestAmount: 5
+  damageTestButton: 99
+  damageTestAmount: 20
   enemy: {fileID: 729248742}
   player: {fileID: 823895358}
-  bossSlider: {fileID: 0}
+  bossSlider: {fileID: 1173502590}
   sprite: {fileID: 729248745}
   iFramesTime: 0
 --- !u!61 &729248747

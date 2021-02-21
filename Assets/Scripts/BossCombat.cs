@@ -37,6 +37,7 @@ public class BossCombat : MonoBehaviour
 
     private int noOfAtks = 0;
     [SerializeField] int atksToTP;
+    [SerializeField] BossSlider bossSlider;
 
     private int dir = 1;
     void Start()
@@ -55,6 +56,8 @@ public class BossCombat : MonoBehaviour
         AI();
         if (Input.GetKeyDown(KeyCode.O))
             Swing();
+
+        bossSlider.SetBossHealth(GetComponent<Health>().GetHP());
     }
 
 

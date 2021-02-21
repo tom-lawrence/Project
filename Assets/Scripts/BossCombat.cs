@@ -93,7 +93,6 @@ public class BossCombat : MonoBehaviour
                     attackCooldown = swingCooldown;
                     anim.Play("Boss_Smash");
                     Invoke(nameof(Swing), swingTimeBeforeDamage);
-
                 }
 
                 else
@@ -103,14 +102,14 @@ public class BossCombat : MonoBehaviour
                 }
             }
 
+            
 
-            else
+            else 
             {
                 attackCooldown = maceThrowCooldown;
                 anim.Play("Boss_Yeet"); 
                 StartCoroutine(MaceThrowEnum());
             }
-
         }
     }
 
@@ -161,13 +160,15 @@ public class BossCombat : MonoBehaviour
     void Stomp()
     {
         Debug.Log("stomp executed");
-
+        for(int i = 0; i < 10 ; i += 2)
+        {
         GameObject spear = Instantiate(spearPrefab);
-        spear.transform.position = transform.position;
+        spear.transform.position = transform.position + new Vector3(0,i - 4,0);
         //spear.transform.position = new Vector3(spear.transform.position.x, spear.transform.position.y, 0.5f);
         spear.transform.localScale *= dir;
 
         spear.GetComponent<Spears>().Launch(spearSpeed, dir);
+        }
     }
 
     void Teleport()

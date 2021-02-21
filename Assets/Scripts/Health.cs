@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] int damageTestAmount;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject player;
+    [SerializeField] BossSlider bossSlider;
 
     //[SerializeField] Animator anim;
 
@@ -42,7 +43,7 @@ public class Health : MonoBehaviour
         //Initialise the health values.
         health = maxHealth;
 
- 
+        bossSlider.SetBossMaxHealth(maxHealth); 
 
     }
 
@@ -58,6 +59,7 @@ public class Health : MonoBehaviour
         if (!isInvincible)
         {
             health -= damage;
+            bossSlider.SetBossHealth(health);
             TakeDamageFX();
 
             //determine damage frame for player

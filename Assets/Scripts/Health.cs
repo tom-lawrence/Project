@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
 
     public SpriteRenderer sprite;
 
-    [SerializeField] float iFramesTime;
+    [SerializeField] float DamageIFramesTime;
     private bool isInvincible = false;
 
 
@@ -72,7 +72,7 @@ public class Health : MonoBehaviour
             if (health <= 0)
                 Die();
             else
-                StartIFramesTimer();
+                StartIFramesTimer(DamageIFramesTime);
 
             UpdateHP();
         }
@@ -136,7 +136,7 @@ public class Health : MonoBehaviour
     }
 
 
-    public void StartIFramesTimer()    //Called by another script when i-frames should start.
+    public void StartIFramesTimer(float iFramesTime)    //Called by another script when i-frames should start.
     {
         isInvincible = true;
         Invoke(nameof(IFramesOff), iFramesTime);

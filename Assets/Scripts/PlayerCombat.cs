@@ -68,7 +68,7 @@ public class PlayerCombat : MonoBehaviour
         {
             anim.SetTrigger("LightAttack"); //set trigger parameter to LightAttack
             lockoutTimer = lightAttackLockout;
-            Invoke(nameof(HeavyAttack), timeBeforeLightAttack);
+            Invoke(nameof(LightAttack), timeBeforeLightAttack);
         }
 
         if (Input.GetKeyDown(heavyAttack))

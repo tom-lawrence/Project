@@ -13,6 +13,8 @@ public class DashMove : MonoBehaviour
     bool isDashing;
     bool canDash = true;
     float direction = 1;
+
+    [SerializeField] float dashIFrames;
     
     [SerializeField] float force;
     [SerializeField] Animator anim;
@@ -51,6 +53,7 @@ public class DashMove : MonoBehaviour
                 StopCoroutine(dashCoroutine);
             }
             dashCoroutine = Dash(.1f, 1);
+            GetComponent<Health>().StartIFramesTimer(dashIFrames);
             StartCoroutine(dashCoroutine);
 
 

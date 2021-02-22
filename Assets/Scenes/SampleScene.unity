@@ -1197,7 +1197,7 @@ MonoBehaviour:
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
   sprite: {fileID: 729248745}
-  iFramesTime: 0
+  DamageIFramesTime: 0
 --- !u!61 &729248747
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1489,8 +1489,8 @@ MonoBehaviour:
   heavyAttackLockout: 0.8
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15
-  lightAttackDamage: 15
-  heavyAttackDamage: 20
+  lightAttackDamage: 3
+  heavyAttackDamage: 5
   heavyAttackVulnerableTime: 0.4
   playerSlider: {fileID: 1689985189}
   lockoutTimer: 0
@@ -1534,6 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: 0
   rb: {fileID: 823895361}
+  dashIFrames: 1
   force: 40
   anim: {fileID: 823895365}
   Player: {fileID: 823895360}
@@ -1574,7 +1575,7 @@ MonoBehaviour:
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
   sprite: {fileID: 823895359}
-  iFramesTime: 1
+  DamageIFramesTime: 4
 --- !u!114 &823895371
 MonoBehaviour:
   m_ObjectHideFlags: 0

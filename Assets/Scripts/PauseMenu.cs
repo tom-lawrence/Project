@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
         //If escape key is pressed change to paused state
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if (GameIsPaused)
             {
                 Resume();
             }
@@ -56,11 +56,5 @@ public class PauseMenu : MonoBehaviour
 
         }
 
-        void Options()
-        {
-           // GetSceneByBuildIndex(int buildIndex;
-
-
-        }
     }
 }

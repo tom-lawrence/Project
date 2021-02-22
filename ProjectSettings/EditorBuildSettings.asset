@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2b2a63548a44e78489881567fd5c6e96
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: d9b674626a012ec4186b44ff2cab8524
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 434b98a7749b05f49b2ebdcb836ab7ab
+  - enabled: 1
+    path: Assets/Scenes/LoseGame.unity
+    guid: 88a6ebb8adcd5234ba41f0ec1df28bf5
+  - enabled: 1
+    path: Assets/Scenes/WinGame.unity
+    guid: 51e102482b388fe469c4d0ba757b0f8d
   m_configObjects: {}

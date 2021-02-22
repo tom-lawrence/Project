@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
@@ -55,6 +57,8 @@ public class Health : MonoBehaviour
     {
         if (Input.GetKeyDown(damageTestButton))
             TakeDamage(damageTestAmount);
+
+       
     }
 
     public void TakeDamage(int damage)
@@ -120,6 +124,11 @@ public class Health : MonoBehaviour
         */
 
         //Game over routine is called here.
+           if (health == 0)
+           {
+                SceneManager.LoadScene("LoseGame");
+           }    
+        
         Debug.Log("player dead");
     }
 

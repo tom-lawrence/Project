@@ -44,11 +44,14 @@ public class BossHealth : MonoBehaviour
     {
         //anim.play("Boss_Death");
 
-
+        if(currentHealth == 0)
+        {
+            SceneManager.LoadScene("WinGame");
+        }
 
         Debug.Log("Boss is dead");
 
-        SceneManager.LoadScene("WinState");
+        
 
     }
 

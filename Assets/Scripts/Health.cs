@@ -124,7 +124,7 @@ public class Health : MonoBehaviour
         */
 
         //Game over routine is called here.
-           if (health == 0)
+           if (health <= 0)
            {
                 SceneManager.LoadScene("LoseGame");
            }    

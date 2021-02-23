@@ -56,8 +56,7 @@ public class PlayerCombat : MonoBehaviour
             PlayerInput();
 
         playerSlider.GetComponent<PlayerSlider>().SetPlayerHealth(GetComponent<Health>().GetHP());
-        
-
+      
     }
 
     //Player input goes here.

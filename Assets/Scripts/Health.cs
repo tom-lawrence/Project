@@ -177,10 +177,7 @@ public class Health : MonoBehaviour
         {
             SoundManager.PlaySound("PlayerPainFX");
         }
-        else if (player.tag == "Enemy")
-        {
-            SoundManager.PlaySound("BossPainFX");
-        }
+       
     }
     
 

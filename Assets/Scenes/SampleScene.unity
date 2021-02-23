@@ -1113,13 +1113,13 @@ MonoBehaviour:
   spearPrefab: {fileID: 5387208753222811682, guid: 2c6648eb530f22b4fbf8fe2daa39af26,
     type: 3}
   maceThrowCooldown: 5.04
-  swingCooldown: 3.02
+  swingCooldown: 3
   stompCooldown: 1
   maceMeleeRange: 14.99
   swingDamage: 30
   maceProjSpeed: 20
   spearSpeed: 30
-  initBossLockout: 5
+  initBossLockout: 0
   swingTimeBeforeDamage: 1
   anim: {fileID: 729248748}
   TopLeftPos: {x: -23.5, y: 7.7}

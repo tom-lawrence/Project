@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject bossSlider;
     [SerializeField] GameObject playerSlider;
 
+    [SerializeField] PlayerCombat playerCombat;
+
     //[SerializeField] Animator anim;
 
 
@@ -65,8 +67,15 @@ public class Health : MonoBehaviour
     {
         if (!isInvincible)
         {
-            health -= damage;
+
+            //health -= damage;
+
            
+            if (playerCombat.heavyAttackVulnerable == true)
+                health -= damage*2;
+            else
+                health -= damage;
+
             TakeDamageFX();
 
             //determine damage frame for player
@@ -80,6 +89,7 @@ public class Health : MonoBehaviour
 
             UpdateHP();
         }
+        
 
     }
 

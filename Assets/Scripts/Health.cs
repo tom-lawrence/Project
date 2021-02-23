@@ -75,6 +75,9 @@ public class Health : MonoBehaviour
             {
                 if (gameObject.GetComponent<PlayerCombat>().heavyAttackVulnerable == true)
                     health -= damage * 2;
+                else
+                    health -= damage;
+
             }
 
             else

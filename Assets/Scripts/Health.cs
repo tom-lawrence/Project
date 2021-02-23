@@ -71,10 +71,11 @@ public class Health : MonoBehaviour
             //health -= damage;
 
            
-            if (playerCombat.heavyAttackVulnerable == true)
+            if (GetComponent<PlayerCombat>().heavyAttackVulnerable == true)
                 health -= damage*2;
             else
                 health -= damage;
+            
 
             TakeDamageFX();
 
@@ -136,8 +137,17 @@ public class Health : MonoBehaviour
         //Game over routine is called here.
            if (health <= 0)
            {
+            if (gameObject.name == "MainPlayer")
+            {
+                // Debug.Log("player dead");
                 SceneManager.LoadScene("LoseGame");
-           }    
+            }
+            else
+            {
+
+                SceneManager.LoadScene("WinGame");
+            }
+        }       
         
         Debug.Log("player dead");
     }

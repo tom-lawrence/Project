@@ -30,7 +30,7 @@ public class PlayTransition : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         animSmoke.SetTrigger("Smoke");
         yield return new WaitForSeconds(0.4f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 

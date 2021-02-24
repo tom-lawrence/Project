@@ -19,6 +19,12 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject playerSlider;
 
     [SerializeField] PlayerCombat playerCombat;
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] DashMove playerDash;
+    [SerializeField] Jump playerJump;
+    [SerializeField] Rigidbody2D playerRb;
+    [SerializeField] BossCombat bossCombat;
+    [SerializeField] Animator anim;
 
     //[SerializeField] Animator anim;
 
@@ -146,18 +152,38 @@ public class Health : MonoBehaviour
            {
                 if (gameObject.name == "MainPlayer")
                 {
-                    // Debug.Log("player dead");
-                    SceneManager.LoadScene("LoseGame");
+                    bossCombat.enabled = false;
+                    StartCoroutine(PlayerDeathAnim());
                 }
                 else
                 {
-
-                    SceneManager.LoadScene("WinGame");
+                    StartCoroutine(BossDeathAnim());
                 }
            }       
         
-        Debug.Log("player dead");
+        
 
+    }
+    public IEnumerator PlayerDeathAnim()
+    {
+        isInvincible = true;
+        anim.Play("Player_Death");
+        playerCombat.enabled = false;
+        playerMovement.enabled = false;
+        playerDash.enabled = false;
+        playerJump.enabled = false;
+        playerRb.isKinematic = false;
+        //bossCombat.enabled = false;
+        yield return new WaitForSeconds(3f);        
+        SceneManager.LoadScene("LoseGame");     
+    }
+
+    public IEnumerator BossDeathAnim()
+    {
+        bossCombat.enabled = false;
+        anim.Play("Boss_Death");
+        yield return new WaitForSeconds(5.5f);
+        SceneManager.LoadScene("WinGame");
     }
 
     void UpdateHP()

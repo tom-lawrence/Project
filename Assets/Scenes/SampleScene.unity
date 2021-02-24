@@ -1198,6 +1198,7 @@ GameObject:
   - component: {fileID: 729248747}
   - component: {fileID: 729248749}
   - component: {fileID: 729248750}
+  - component: {fileID: 729248751}
   m_Layer: 10
   m_Name: boss_placeholder
   m_TagString: Enemy
@@ -1259,7 +1260,6 @@ MonoBehaviour:
   BottomLeftPos: {x: -22.5, y: -6.3}
   TopRightPos: {x: 20.31, y: 7.7}
   atksToTP: 5
-  bossSlider: {fileID: 1173502588}
 --- !u!212 &729248745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1331,6 +1331,12 @@ MonoBehaviour:
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
   playerCombat: {fileID: 823895366}
+  playerMovement: {fileID: 823895362}
+  playerDash: {fileID: 823895368}
+  playerJump: {fileID: 823895367}
+  playerRb: {fileID: 823895361}
+  bossCombat: {fileID: 729248744}
+  anim: {fileID: 729248748}
   sprite: {fileID: 729248745}
   DamageIFramesTime: 0
 --- !u!61 &729248747
@@ -1403,6 +1409,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1173502591}
+--- !u!114 &729248751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729248742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d0b66e40e7d2b4194be29d3e9e5c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSlider: {fileID: 1173502588}
 --- !u!1 &823895358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1444,7 @@ GameObject:
   - component: {fileID: 823895370}
   - component: {fileID: 823895371}
   - component: {fileID: 823895372}
+  - component: {fileID: 823895373}
   m_Layer: 9
   m_Name: MainPlayer
   m_TagString: Player
@@ -1491,7 +1511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823895358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.7, y: -9.31, z: 0}
+  m_LocalPosition: {x: -21.8, y: 4.99, z: 0}
   m_LocalScale: {x: 3.134742, y: 3.134742, z: 3.134742}
   m_Children:
   - {fileID: 1245213205}
@@ -1625,9 +1645,8 @@ MonoBehaviour:
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15
   lightAttackDamage: 2
-  heavyAttackDamage: 5
+  heavyAttackDamage: 50
   heavyAttackVulnerableTime: 0.6
-  playerSlider: {fileID: 1689985189}
   lockoutTimer: 0
   heavyAttackVulnerable: 0
 --- !u!114 &823895367
@@ -1709,7 +1728,13 @@ MonoBehaviour:
   player: {fileID: 823895358}
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 823895366}
+  playerMovement: {fileID: 823895362}
+  playerDash: {fileID: 823895368}
+  playerJump: {fileID: 823895367}
+  playerRb: {fileID: 823895361}
+  bossCombat: {fileID: 729248744}
+  anim: {fileID: 823895365}
   sprite: {fileID: 823895359}
   DamageIFramesTime: 0.5
 --- !u!114 &823895371
@@ -1737,6 +1762,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1689985191}
+--- !u!114 &823895373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823895358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed82781a9af49348b1b39a796b3d138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSlider: {fileID: 1689985189}
 --- !u!1 &858732985
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,10 @@ public class SoundPlayer : MonoBehaviour
     {
         SoundManager.PlaySound("SwingFX");
     }
+    void PlayerDeathFX()
+    {
+        SoundManager.PlaySound("PlayerDeathFX");
+    }
 
 
 }

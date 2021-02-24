@@ -15,6 +15,10 @@ public class SoundPlayer : MonoBehaviour
     {
         SoundManager.PlaySound("MaceSwooshFX");
     }
+    void BossStompFX()
+    {
+        SoundManager.PlaySound("ArrowFX");
+    }
     void BossLaughFX()
     {
         SoundManager.PlaySound("BossLaughFX");

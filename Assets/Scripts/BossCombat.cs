@@ -32,8 +32,12 @@ public class BossCombat : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    [SerializeField] int swapOrder = 0;
+    [SerializeField] bool isTPing = false;
     [SerializeField] Vector2 TopLeftPos;
     [SerializeField] Vector2 BottomRightPos;
+    [SerializeField] Vector2 BottomLeftPos;
+    [SerializeField] Vector2 TopRightPos;
 
     private int noOfAtks = 0;
     [SerializeField] int atksToTP;
@@ -47,6 +51,7 @@ public class BossCombat : MonoBehaviour
         attackCooldown = initBossLockout;
 
         Teleport();
+        Flip();
     }
 
 
@@ -76,45 +81,55 @@ public class BossCombat : MonoBehaviour
     void BossMainPhase()
     {
         attackCooldown -= Time.deltaTime;
+        
 
         if (attackCooldown <= 0)
         {
-            noOfAtks++;
 
             if (noOfAtks >= atksToTP)
             {
-                Flip();
-                Teleport();
+                
+                StartCoroutine(TPEnum());
+                
                 noOfAtks = 0;
             }
 
-            //If the player is in melee range, execute the melee attack.
-            if (Vector2.Distance(transform.position, player.transform.position) <= maceMeleeRange)
+            if (isTPing == false)
             {
-                if (Random.Range(0, 100) > 50)
+                noOfAtks++;
+
+                //If the player is in melee range, execute the melee attack.
+                if (Vector2.Distance(transform.position, player.transform.position) <= maceMeleeRange)
                 {
-                    attackCooldown = swingCooldown;
-                    anim.Play("Boss_Smash");
-                    Invoke(nameof(Swing), swingTimeBeforeDamage);
+                    if (Random.Range(0, 100) > 50)
+                    {
+                        attackCooldown = swingCooldown;
+                        anim.Play("Boss_Smash");
+                        Invoke(nameof(Swing), swingTimeBeforeDamage);
+                    }
+
+                    else
+                    {
+                        anim.Play("Boss_Arrow");
+                        attackCooldown = stompCooldown;
+                        StartCoroutine(StompEnum());
+                    }
                 }
 
-                else
+            
+
+                else 
                 {
-                    anim.Play("Boss_Arrow");
-                    attackCooldown = stompCooldown;
-                    StartCoroutine(StompEnum());
+                    attackCooldown = maceThrowCooldown;
+                    anim.Play("Boss_Yeet"); 
+                    StartCoroutine(MaceThrowEnum());
                 }
             }
 
             
 
-            else 
-            {
-                attackCooldown = maceThrowCooldown;
-                anim.Play("Boss_Yeet"); 
-                StartCoroutine(MaceThrowEnum());
-            }
         }
+       
     }
 
 
@@ -142,17 +157,29 @@ public class BossCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         MaceThrow();
+        yield return new WaitForSeconds(1f);
     }
     public IEnumerator SwingEnum()
     {
         yield return new WaitForSeconds(1f);
         Swing();
+       
     }
     public IEnumerator StompEnum()
     {
         yield return new WaitForSeconds(1f);
         Stomp();
+        yield return new WaitForSeconds(2f);
     }
+    public IEnumerator TPEnum()
+    {
+        isTPing = true;
+        yield return new WaitForSeconds(0.3f);
+        Teleport();
+        yield return new WaitForSeconds(0.1f);
+        isTPing = false;
+    }
+
 
 
     void MaceThrow()
@@ -173,7 +200,7 @@ public class BossCombat : MonoBehaviour
         for(int i = 0; i < 10 ; i += 2)
         {
         GameObject spear = Instantiate(spearPrefab);
-        spear.transform.position = transform.position + new Vector3(0,i - 4,0);
+        spear.transform.position = transform.position + new Vector3(10 * dir + Random.Range(1,10),i - 4,0);
         //spear.transform.position = new Vector3(spear.transform.position.x, spear.transform.position.y, 0.5f);
         spear.transform.localScale *= dir;
 
@@ -183,14 +210,31 @@ public class BossCombat : MonoBehaviour
 
     void Teleport()
     {
-        if (dir == -1)
+
+        
+
+        if (swapOrder == 0)
+        {
+            transform.position = BottomRightPos;
+            ++swapOrder;
+        }
+        else if (swapOrder == 1) 
         {
             transform.position = TopLeftPos;
+            ++swapOrder;
+        }
+        else if (swapOrder == 2)
+        {
+            transform.position = TopRightPos;
+            ++swapOrder;
         }
         else
         {
-            transform.position = BottomRightPos;
+            transform.position = BottomLeftPos;
+            swapOrder = 0;
         }
+
+        Flip();
 
     }
 

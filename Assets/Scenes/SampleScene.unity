@@ -665,7 +665,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e2cc4e344138d98409d410a53c10acc0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.08
+  m_Volume: 0.038
   m_Pitch: 0.72
   Loop: 0
   Mute: 0
@@ -1242,18 +1242,22 @@ MonoBehaviour:
     type: 3}
   spearPrefab: {fileID: 5387208753222811682, guid: 2c6648eb530f22b4fbf8fe2daa39af26,
     type: 3}
-  maceThrowCooldown: 5.04
-  swingCooldown: 3
-  stompCooldown: 1
-  maceMeleeRange: 14.99
+  maceThrowCooldown: 3
+  swingCooldown: 2
+  stompCooldown: 2
+  maceMeleeRange: 28.19
   swingDamage: 30
-  maceProjSpeed: 20
-  spearSpeed: 30
+  maceProjSpeed: 25
+  spearSpeed: 40
   initBossLockout: 0
   swingTimeBeforeDamage: 1
   anim: {fileID: 729248748}
-  TopLeftPos: {x: -23.5, y: 7.7}
+  swapOrder: 0
+  isTPing: 0
+  TopLeftPos: {x: -22.5, y: 7.7}
   BottomRightPos: {x: 20.31, y: -6.3}
+  BottomLeftPos: {x: -22.5, y: -6.3}
+  TopRightPos: {x: 20.31, y: 7.7}
   atksToTP: 5
   bossSlider: {fileID: 1173502588}
 --- !u!212 &729248745
@@ -1326,6 +1330,7 @@ MonoBehaviour:
   player: {fileID: 823895358}
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
+  playerCombat: {fileID: 0}
   sprite: {fileID: 729248745}
   DamageIFramesTime: 0
 --- !u!61 &729248747
@@ -1609,7 +1614,7 @@ MonoBehaviour:
   heavyAttack: 324
   anim: {fileID: 823895365}
   heavyHitbox: {fileID: 1573503165}
-  heavyHitBoxRadius: -0.38
+  heavyHitBoxRadius: 0.91
   lightHitbox: {fileID: 1212472971}
   lightHitBoxRadius: 0.2
   enemiesLayer:
@@ -1621,7 +1626,7 @@ MonoBehaviour:
   timeBeforeLightAttack: 0.15
   lightAttackDamage: 3
   heavyAttackDamage: 5
-  heavyAttackVulnerableTime: 0.4
+  heavyAttackVulnerableTime: 0.6
   playerSlider: {fileID: 1689985189}
   lockoutTimer: 0
   heavyAttackVulnerable: 0
@@ -1704,6 +1709,7 @@ MonoBehaviour:
   player: {fileID: 823895358}
   bossSlider: {fileID: 1173502588}
   playerSlider: {fileID: 1689985189}
+  playerCombat: {fileID: 0}
   sprite: {fileID: 823895359}
   DamageIFramesTime: 4
 --- !u!114 &823895371
@@ -2081,12 +2087,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144937400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27235025, y: 1.138322, z: 1.1152344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1940403550}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1173502588
 GameObject:
@@ -2274,7 +2280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430639932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.552, y: -0.277, z: 0}
+  m_LocalPosition: {x: -0.453, y: -0.277, z: 0}
   m_LocalScale: {x: 109.23571, y: 109.23571, z: 109.23571}
   m_Children: []
   m_Father: {fileID: 729248743}
@@ -3890,6 +3896,7 @@ Transform:
   - {fileID: 1492190848}
   - {fileID: 725644173}
   - {fileID: 1718214416}
+  - {fileID: 1144937403}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

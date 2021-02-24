@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "PlayerJumpFX":
-                audioSrc.PlayOneShot(playerJumpSound);
+                audioSrc.PlayOneShot(playerJumpSound, 0.3f);
                 break;
             
             case "PlayerPainFX":

@@ -1625,7 +1625,7 @@ MonoBehaviour:
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15
   lightAttackDamage: 3
-  heavyAttackDamage: 5
+  heavyAttackDamage: 100
   heavyAttackVulnerableTime: 0.6
   playerSlider: {fileID: 1689985189}
   lockoutTimer: 0

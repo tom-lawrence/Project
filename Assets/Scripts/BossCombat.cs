@@ -207,7 +207,7 @@ public class BossCombat : MonoBehaviour
         for(int i = 0; i < 10 ; i += 2)
         {
         GameObject spear = Instantiate(spearPrefab);
-        spear.transform.position = transform.position + new Vector3(10 * dir + Random.Range(1,10),i - 4,0);
+        spear.transform.position = transform.position + new Vector3(30 * dir + Random.Range(1,30),i - 4, 0);
         //spear.transform.position = new Vector3(spear.transform.position.x, spear.transform.position.y, 0.5f);
         spear.transform.localScale *= dir;
 

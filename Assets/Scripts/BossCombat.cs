@@ -62,7 +62,7 @@ public class BossCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
             Swing();
 
-        bossSlider.GetComponent<BossSlider>().SetBossHealth(GetComponent<Health>().GetHP());
+        //bossSlider.GetComponent<BossSlider>().SetBossHealth(GetComponent<Health>().GetHP());
     }
 
 

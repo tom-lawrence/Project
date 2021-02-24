@@ -7,6 +7,11 @@ public class PlayerSlider : MonoBehaviour
 {
     public Slider slider;
 
+    private void Update()
+    {
+        //SetPlayerHealth(GetComponent<Health>().GetHP());
+
+    }
     public void SetPlayerMaxHealth(int health)
     {
         slider.maxValue = health;

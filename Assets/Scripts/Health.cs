@@ -166,12 +166,13 @@ public class Health : MonoBehaviour
     }
     public IEnumerator PlayerDeathAnim()
     {
+        isInvincible = true;
         anim.Play("Player_Death");
         playerCombat.enabled = false;
         playerMovement.enabled = false;
         playerDash.enabled = false;
         playerJump.enabled = false;
-        playerRb.isKinematic = true;
+        playerRb.isKinematic = false;
         //bossCombat.enabled = false;
         yield return new WaitForSeconds(3f);        
         SceneManager.LoadScene("LoseGame");     

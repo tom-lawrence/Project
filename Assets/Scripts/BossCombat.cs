@@ -41,7 +41,7 @@ public class BossCombat : MonoBehaviour
 
     private int noOfAtks = 0;
     [SerializeField] int atksToTP;
-    [SerializeField] GameObject bossSlider;
+    //[SerializeField] GameObject bossSlider;
 
     private int dir = 1;
     void Start()

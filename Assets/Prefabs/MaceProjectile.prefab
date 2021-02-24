@@ -134,7 +134,7 @@ MonoBehaviour:
   maceProjHitbox: {fileID: 1995206566648714453}
   maceProjHitboxRadius: 5.94
   timeOnScreen: 3
-  maceProjectileDamage: 20
+  maceProjectileDamage: 15
   rb: {fileID: 8830164940535018634}
 --- !u!61 &4348980013653404755
 BoxCollider2D:

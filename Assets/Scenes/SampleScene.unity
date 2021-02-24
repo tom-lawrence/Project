@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c734e28aec337e45a3536701a062310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   damageTestButton: 99
   damageTestAmount: 20
   enemy: {fileID: 729248742}
@@ -1640,13 +1640,13 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 1024
-  lightAttackLockout: 0.5
-  heavyAttackLockout: 0.8
+  lightAttackLockout: 0.3
+  heavyAttackLockout: 1
   timeBeforeHeavyAttack: 0.5
   timeBeforeLightAttack: 0.15
-  lightAttackDamage: 2
-  heavyAttackDamage: 50
-  heavyAttackVulnerableTime: 0.6
+  lightAttackDamage: 1
+  heavyAttackDamage: 10
+  heavyAttackVulnerableTime: 0.5
   lockoutTimer: 0
   heavyAttackVulnerable: 0
 --- !u!114 &823895367
@@ -2228,9 +2228,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 200
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

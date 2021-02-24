@@ -149,7 +149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   timeOnScreen: 4
-  spearDamage: 20
+  spearDamage: 7
 --- !u!1 &8722046401094745742
 GameObject:
   m_ObjectHideFlags: 0

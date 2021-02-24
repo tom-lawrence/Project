@@ -88,7 +88,7 @@ public class BossCombat : MonoBehaviour
 
             if (noOfAtks >= atksToTP)
             {
-                
+                SoundManager.PlaySound("TeleportFX");
                 StartCoroutine(TPEnum());
                 
                 noOfAtks = 0;
@@ -116,7 +116,7 @@ public class BossCombat : MonoBehaviour
                     }
                 }
 
-            
+                
 
                 else 
                 {
@@ -174,9 +174,11 @@ public class BossCombat : MonoBehaviour
     public IEnumerator TPEnum()
     {
         isTPing = true;
+        anim.Play("Boss_TP");
         yield return new WaitForSeconds(0.3f);
+        
         Teleport();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         isTPing = false;
     }
 

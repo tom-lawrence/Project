@@ -200,10 +200,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamageFX()
     {
-        if(player.tag == "Player")
+        if (gameObject.name == "MainPlayer")
         {
             SoundManager.PlaySound("PlayerPainFX");
         }
+        else
+            SoundManager.PlaySound("BossPainFX");
        
     }
     

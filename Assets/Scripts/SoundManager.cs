@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip playerDashSound, playerDeathSound, playerJumpSound, playerPainSound, stabSound, swingSound, arrowSound, bossDeathSound, bossLaughSound, bossMoveSound, bossPainSound, bossSwingSound, maceSwooshSound;
+    public static AudioClip playerDashSound, playerDeathSound, playerJumpSound, playerPainSound, stabSound, swingSound, arrowSound, bossDeathSound, bossLaughSound, bossMoveSound, bossPainSound, bossSwingSound, maceSwooshSound, TP;
     static AudioSource audioSrc;
 
     void Start()
@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
         bossPainSound = Resources.Load<AudioClip>("BossPainFX");
         bossSwingSound = Resources.Load<AudioClip>("BossSwingFX");
         maceSwooshSound = Resources.Load<AudioClip>("MaceSwooshFX");
+        TP = Resources.Load<AudioClip>("TP");
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -90,7 +91,11 @@ public class SoundManager : MonoBehaviour
             case "MaceSwooshFX":
                 audioSrc.PlayOneShot(maceSwooshSound);
                 break;
-                
+
+            case "TeleportFX":
+                audioSrc.PlayOneShot(TP);
+                break;
+
         }
     }
 }

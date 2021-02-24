@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DashMove : MonoBehaviour
 {
-    const KeyCode DASH_BUTTON = KeyCode.W;
+    const KeyCode DASH_BUTTON = KeyCode.Space;
 
     public float horizontal;
     float vertical;
@@ -43,7 +43,7 @@ public class DashMove : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         //vertical = Input.GetAxisRaw("Jump");
 
-        if (Input.GetKeyDown(KeyCode.E) && canDash == true && combatScript.lockoutTimer <=0)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash == true && combatScript.lockoutTimer <=0)
         {
             //anim.SetTrigger("Dash");
 

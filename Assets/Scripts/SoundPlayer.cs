@@ -24,6 +24,15 @@ public class SoundPlayer : MonoBehaviour
         SoundManager.PlaySound("BossLaughFX");
     }
 
+    void BossDeathFX()
+    {
+        SoundManager.PlaySound("BossDeathFX");
+    }
+    void BossFadeFX()
+    {
+        SoundManager.PlaySound("PainBossFX");
+    }
+
     //---------------Player--------------
     void JumpFX()
     {

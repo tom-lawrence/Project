@@ -115,21 +115,26 @@ public class BossCombat : MonoBehaviour
                         StartCoroutine(StompEnum());
                     }
                 }
-
                 
-
-                else 
+                else
                 {
-                    attackCooldown = maceThrowCooldown;
-                    anim.Play("Boss_Yeet"); 
-                    StartCoroutine(MaceThrowEnum());
+                
+                    if (Random.Range(0, 100) > 65)
+                    {
+                        anim.Play("Boss_Arrow");
+                        attackCooldown = stompCooldown;
+                        StartCoroutine(StompEnum());
+                    }
+
+                    else
+                    {
+                        attackCooldown = maceThrowCooldown;
+                        anim.Play("Boss_Yeet");
+                        StartCoroutine(MaceThrowEnum());
+                    }
                 }
             }
-
-            
-
         }
-       
     }
 
 

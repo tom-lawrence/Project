@@ -144,19 +144,20 @@ public class Health : MonoBehaviour
         //Game over routine is called here.
            if (health <= 0)
            {
-            if (gameObject.name == "MainPlayer")
-            {
-                // Debug.Log("player dead");
-                SceneManager.LoadScene("LoseGame");
-            }
-            else
-            {
+                if (gameObject.name == "MainPlayer")
+                {
+                    // Debug.Log("player dead");
+                    SceneManager.LoadScene("LoseGame");
+                }
+                else
+                {
 
-                SceneManager.LoadScene("WinGame");
-            }
-        }       
+                    SceneManager.LoadScene("WinGame");
+                }
+           }       
         
         Debug.Log("player dead");
+
     }
 
     void UpdateHP()

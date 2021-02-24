@@ -386,6 +386,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8310349863671220440, guid: 0bacedaf2d8ce59419ec753a080b0abe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 93
+      objectReference: {fileID: 0}
     - target: {fileID: 8310349863671220441, guid: 0bacedaf2d8ce59419ec753a080b0abe,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
